@@ -1,44 +1,13 @@
 /* eslint-disable react/react-in-jsx-scope */
 //import React from 'react'; // Can be done without writing this line
-import {StyleSheet, ScrollView} from 'react-native';
-import FeedPost from './src/components/FeedPost/FeedPost';
-
-const post = {
-  id: '1',
-  createdAt: '31 December 2021',
-  image: 'https://notjustdev-dummy.s3.us-east-2.amazonaws.com/images/1.jpg',
-  description:
-    'Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic repellendus unde blanditiis. Eos fugiat dolorem ea fugit aut sapiente corrupti autem dolores deleniti architecto, omnis, amet unde dignissimos quam minima?',
-  user: {
-    image: 'https://notjustdev-dummy.s3.us-east-2.amazonaws.com/avatars/2.jpg',
-    username: 'Yonathan',
-  },
-  nofComments: 10,
-  nofLikes: 35,
-  // Every array represents one comment
-  comments: [
-    {
-      id: '1',
-      comment: 'Hello there',
-      user: {
-        username: 'cotteneyejoe',
-      },
-    },
-    {
-      id: '2',
-      comment: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. H',
-      user: {
-        username: 'Latin_guy1',
-      },
-    },
-  ],
-};
+import {StyleSheet, View} from 'react-native';
+import HomeScreen from './src/screens/HomeScreen/HomeScreen';
 
 const App = () => {
   return (
-    <ScrollView style={styles.app}>
-      <FeedPost post={post} />
-    </ScrollView>
+    <View style={styles.app}>
+      <HomeScreen />
+    </View>
   );
 };
 
