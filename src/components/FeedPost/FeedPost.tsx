@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable react/react-in-jsx-scope */
 //import React from 'react'; // Can be done without writing this line
 import {useState} from 'react';
@@ -132,7 +131,7 @@ const FeedPost = ({post, isVisible}: IFeedPost) => {
         {/* Comments */}
         <Text>View all {post.nofComments} comments</Text>
         {post.comments.map(comment => (
-          <Comment key={comment.id} comment={comment} />
+          <Comment key={comment.id} comment={comment} includeDetails={false} />
         ))}
 
         {/* Posted date */}

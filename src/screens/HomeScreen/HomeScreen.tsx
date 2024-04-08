@@ -26,9 +26,6 @@ const HomeScreen = () => {
       renderItem={({item}) => (
         <FeedPost post={item} isVisible={activePostId === item.id} />
       )}
-      keyExtractor={item => {
-        return `post-${item.id}`;
-      }}
       showsVerticalScrollIndicator={false}
       viewabilityConfig={viewabilityConfig}
       onViewableItemsChanged={onViewableItemsChanged.current}

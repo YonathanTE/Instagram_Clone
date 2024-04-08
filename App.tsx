@@ -4,11 +4,13 @@
 import {StyleSheet, View, FlatList} from 'react-native';
 import HomeScreen from './src/screens/HomeScreen/HomeScreen';
 import CommentsScreen from './src/screens/CommentsScreen/CommentsScreen';
+import EditProfileScreen from './src/screens/EditProfileScreen';
 
 const App = () => {
   return (
     <View style={styles.app}>
       <HomeScreen />
+      {/* <CommentsScreen /> */}
     </View>
   );
 };

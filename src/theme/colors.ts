@@ -5,6 +5,7 @@ const colors = {
   border: '#dcdcdc',
   error: '#ED4956',
   white: '#fff',
+  red: '#FF0000',
   black: '#000',
   grey: '#666666',
   lightgrey: '#cccccc',

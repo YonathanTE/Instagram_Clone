@@ -1,3 +1,4 @@
+/* eslint-disable react/react-in-jsx-scope */
 import {Pressable} from 'react-native';
 import {ReactNode} from 'react';
 
