@@ -25,7 +25,7 @@
         "comment": "Lorem ipsum dolor sit amet consectetur adipisicing elit. H",
         "user": {
           "id": "u1",
-          "username": "yonathan"
+          "username": "john"
         }
       }
     ]
@@ -53,7 +53,7 @@
         "comment": "Lorem ipsum dolor sit amet consectetur adipisicing elit. H",
         "user": {
           "id": "u1",
-          "username": "yonathan"
+          "username": "David"
         }
       },
       {
@@ -107,7 +107,7 @@
     "user": {
       "id": "u1",
       "image": "https://notjustdev-dummy.s3.us-east-2.amazonaws.com/avatars/3.jpg",
-      "username": "yonathan"
+      "username": "Adam"
     },
     "nofComments": 11,
     "nofLikes": 34,

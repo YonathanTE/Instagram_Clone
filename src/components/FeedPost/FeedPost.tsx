@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable react/react-in-jsx-scope */
 //import React from 'react'; // Can be done without writing this line
 import {useState} from 'react';
@@ -14,16 +15,25 @@ import Carousel from '../Carousel';
 import VideoPlayer from '../VideoPlayer';
 
 import styles from './styles';
+import {useNavigation} from '@react-navigation/native';
 import {IPost} from '../../types/models';
 
 interface IFeedPost {
   post: IPost;
-  isVisible: boolean;
+  isVisible?: boolean;
 }
 
-const FeedPost = ({post, isVisible}: IFeedPost) => {
+const FeedPost = (props: IFeedPost) => {
+  const {post, isVisible = false} = props;
+
   const [isDescriptionExpanded, setIsDescriptionExpanded] = useState(false);
   const [isLiked, setIsLiked] = useState(false);
+  const navigation = useNavigation();
+
+  const navigateToUser = () => {
+    // Navigate the username to the user profile page
+    navigation.navigate('User Profile', {userId: post.user.id,});
+  };
 
   const toggleDescriptionExpanded = () => {
     setIsDescriptionExpanded(v => !v); // Make it convert to TRUE
@@ -65,7 +75,7 @@ const FeedPost = ({post, isVisible}: IFeedPost) => {
           }}
           style={styles.userAvatar}
         />
-        <Text style={styles.userName}>{post.user.username}</Text>
+        <Text onPress={navigateToUser} style={styles.userName}>{post.user.username}</Text>
 
         <Entypo
           name="dots-three-horizontal"

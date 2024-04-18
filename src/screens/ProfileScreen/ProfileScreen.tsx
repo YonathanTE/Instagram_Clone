@@ -1,31 +1,18 @@
-/* eslint-disable react-native/no-inline-styles */
+/* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable react/react-in-jsx-scope */
 
-import {Image, FlatList, View} from 'react-native';
+import {Image, FlatList} from 'react-native';
 import user from '../../assets/data/user.json';
 import FeedGridView from '../FeedGridView/FeedGridView';
 import ProfileHeader from './ProfileHeader';
+import {useNavigation, useRoute} from '@react-navigation/native';
 
 const ProfileScreen = () => {
-  return (
-    <View>
-      <FeedGridView data={user.posts} ListHeaderComponent={ProfileHeader} />
+  const route = useRoute();
+  const navigation = useNavigation();
+  const {userId} = route.params;
 
-      {/*GridView Posts */}
-      <FlatList
-        data={user.posts}
-        renderItem={item => (
-          <Image
-            source={{uri: item.item.image || item.item.images[0]}}
-            style={{flex: 1, margin: 1, aspectRatio: 1, maxWidth: '33%'}}
-          />
-        )}
-        numColumns={3}
-        showsVerticalScrollIndicator={false}
-        ListHeaderComponent={ProfileHeader}
-      />
-    </View>
-  );
+  return <FeedGridView data={user.posts} ListHeaderComponent={ProfileHeader} />;
 };
 
 export default ProfileScreen;
