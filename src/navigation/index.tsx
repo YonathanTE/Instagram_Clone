@@ -8,7 +8,7 @@ import EditProfileScreen from '../screens/EditProfileScreen/EditProfileScreen';
 import ProfileScreen from '../screens/ProfileScreen/ProfileScreen';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {View, Text, Image} from 'react-native';
-import logo from '../assets/images/yonathan-logo.png';
+import BottomTabNavigator from './BottomTabNavigator';
 
 const Stack = createNativeStackNavigator(); // Uses 2 properties { Navigator, Screen }
 
@@ -16,13 +16,13 @@ const Navigation = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator
-        initialRouteName="Feed"
-        screenOptions={{headerShown: true}}>
+        initialRouteName="Home"
+        screenOptions={{headerShown: false}}>
         {/* Different Screens (First screen rendered will be default) */}
         <Stack.Screen
-          name="Feed"
-          component={HomeScreen}
-          options={{headerTitle: HeaderTitle, headerTitleAlign: 'center'}}
+          name="Home"
+          component={BottomTabNavigator} // Added this so that bottom tab shows on the page (Just a test to see if it worked) **
+          options={{headerTitleAlign: 'center'}}
         />
 
         <Stack.Screen
@@ -32,16 +32,6 @@ const Navigation = () => {
         />
       </Stack.Navigator>
     </NavigationContainer>
-  );
-};
-
-const HeaderTitle = () => {
-  return (
-    <Image
-      source={logo}
-      resizeMode="contain"
-      style={{width: 225, height: 50}}
-    />
   );
 };
 
