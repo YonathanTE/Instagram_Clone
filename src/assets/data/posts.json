@@ -63,6 +63,14 @@
           "id": "u1",
           "username": "yonathan"
         }
+      },
+      {
+        "id": "3",
+        "comment": "Lorem ipsum dolor sit amet consectetur adipisicing elit. H",
+        "user": {
+          "id": "u1",
+          "username": "yonathan"
+        }
       }
     ]
   },
@@ -78,7 +86,7 @@
       "image": "https://notjustdev-dummy.s3.us-east-2.amazonaws.com/avatars/2.jpg",
       "username": "yonathan"
     },
-    "nofComments": 11,
+    "nofComments": 12,
     "nofLikes": 34,
     "comments": [
       {
@@ -91,6 +99,14 @@
       },
       {
         "id": "2",
+        "comment": "Lorem ipsum dolor sit amet consectetur adipisicing elit. H",
+        "user": {
+          "id": "u1",
+          "username": "yonathan"
+        }
+      },
+      {
+        "id": "3",
         "comment": "Lorem ipsum dolor sit amet consectetur adipisicing elit. H",
         "user": {
           "id": "u1",
@@ -109,7 +125,7 @@
       "image": "https://notjustdev-dummy.s3.us-east-2.amazonaws.com/avatars/3.jpg",
       "username": "Adam"
     },
-    "nofComments": 11,
+    "nofComments": 13,
     "nofLikes": 34,
     "comments": [
       {

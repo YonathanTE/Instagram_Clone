@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable react/react-in-jsx-scope */
 //import React from 'react'; // Can be done without writing this line
 import {useState} from 'react';
@@ -32,7 +31,11 @@ const FeedPost = (props: IFeedPost) => {
 
   const navigateToUser = () => {
     // Navigate the username to the user profile page
-    navigation.navigate('User Profile', {userId: post.user.id,});
+    navigation.navigate('User Profile', {userId: post.user.id});
+  };
+
+  const navigateToComments = () => {
+    navigation.navigate('Comments', {postId: post.id});
   };
 
   const toggleDescriptionExpanded = () => {
@@ -75,7 +78,9 @@ const FeedPost = (props: IFeedPost) => {
           }}
           style={styles.userAvatar}
         />
-        <Text onPress={navigateToUser} style={styles.userName}>{post.user.username}</Text>
+        <Text onPress={navigateToUser} style={styles.userName}>
+          {post.user.username}
+        </Text>
 
         <Entypo
           name="dots-three-horizontal"
@@ -139,7 +144,9 @@ const FeedPost = (props: IFeedPost) => {
         </Text>
 
         {/* Comments */}
-        <Text>View all {post.nofComments} comments</Text>
+        <Text onPress={navigateToComments}>
+          View all {post.nofComments} comments
+        </Text>
         {post.comments.map(comment => (
           <Comment key={comment.id} comment={comment} includeDetails={false} />
         ))}

@@ -1,4 +1,3 @@
-/* eslint-disable react-native/no-inline-styles */
 /* eslint-disable react/react-in-jsx-scope */
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import {NavigationContainer} from '@react-navigation/native';
@@ -17,19 +16,15 @@ const Navigation = () => {
     <NavigationContainer>
       <Stack.Navigator
         initialRouteName="Home"
-        screenOptions={{headerShown: false}}>
+        screenOptions={{headerShown: true}}>
         {/* Different Screens (First screen rendered will be default) */}
         <Stack.Screen
           name="Home"
           component={BottomTabNavigator} // Added this so that bottom tab shows on the page (Just a test to see if it worked) **
-          options={{headerTitleAlign: 'center'}}
+          options={{headerTitleAlign: 'center', headerShown: false}}
         />
 
-        <Stack.Screen
-          name="User Profile"
-          component={ProfileScreen}
-          options={{title: 'Profile Page'}}
-        />
+        <Stack.Screen name="Comments" component={CommentsScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );

@@ -1,3 +1,4 @@
+/* eslint-disable react-native/no-inline-styles */
 /* eslint-disable react/react-in-jsx-scope */
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import {View, Text, Image, FlatList, ScrollView} from 'react-native';
@@ -39,7 +40,7 @@ const ProfileHeader = () => {
       <View style={{flexDirection: 'row'}}>
         <Button
           text="Edit Profile"
-          onPress={() => console.warn('On Edit Profile')}
+          onPress={() => navigation.navigate('Edit Profile')}
         />
         <Button text="Go back" onPress={() => navigation.goBack()} />
       </View>

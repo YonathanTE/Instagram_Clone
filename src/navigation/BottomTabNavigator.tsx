@@ -8,9 +8,11 @@ import ProfileScreen from '../screens/ProfileScreen/ProfileScreen';
 import PostUploadScreen from '../screens/PostUploadScreen';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
+import {faUserCircle} from '@fortawesome/free-solid-svg-icons';
 import HomeStackNavigator from './HomeStackNavigator';
 import colors from '../theme/colors';
+import ProfileStackNavigator from './ProfileStackNavigator';
 
 const Tab = createBottomTabNavigator();
 
@@ -64,6 +66,20 @@ const BottomTabNavigator = () => {
               name="heart-outline"
               size={size}
               color={color}
+            />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="My Profile"
+        component={ProfileStackNavigator}
+        options={{
+          headerShown: false,
+          tabBarIcon: ({color, size}) => (
+            <FontAwesomeIcon
+              icon={faUserCircle}
+              color={color}
+              size={size} // Specify size if needed
             />
           ),
         }}
