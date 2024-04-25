@@ -8,8 +8,9 @@ import ProfileScreen from '../screens/ProfileScreen/ProfileScreen';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {View, Text, Image} from 'react-native';
 import BottomTabNavigator from './BottomTabNavigator';
+import {RootNavigator} from './types';
 
-const Stack = createNativeStackNavigator(); // Uses 2 properties { Navigator, Screen }
+const Stack = createNativeStackNavigator<RootNavigator>(); // Uses 2 properties { Navigator, Screen }
 
 const Navigation = () => {
   return (

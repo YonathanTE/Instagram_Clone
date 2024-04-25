@@ -12,6 +12,7 @@ import Comment from '../Comment/Comment';
 import DoublePressable from '../DoublePressable';
 import Carousel from '../Carousel';
 import VideoPlayer from '../VideoPlayer';
+import {FeedNavigationProp} from '../../navigation/types';
 
 import styles from './styles';
 import {useNavigation} from '@react-navigation/native';
@@ -27,11 +28,11 @@ const FeedPost = (props: IFeedPost) => {
 
   const [isDescriptionExpanded, setIsDescriptionExpanded] = useState(false);
   const [isLiked, setIsLiked] = useState(false);
-  const navigation = useNavigation();
+  const navigation = useNavigation<FeedNavigationProp>();
 
   const navigateToUser = () => {
     // Navigate the username to the user profile page
-    navigation.navigate('User Profile', {userId: post.user.id});
+    navigation.navigate('UserProfile', {userId: post.user.id});
   };
 
   const navigateToComments = () => {
