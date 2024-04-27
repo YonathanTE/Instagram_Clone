@@ -1,6 +1,6 @@
 /* eslint-disable react/react-in-jsx-scope */
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import {NavigationContainer} from '@react-navigation/native';
+import {LinkingOptions, NavigationContainer} from '@react-navigation/native';
 import HomeScreen from '../screens/HomeScreen/HomeScreen';
 import CommentsScreen from '../screens/CommentsScreen/CommentsScreen';
 import EditProfileScreen from '../screens/EditProfileScreen/EditProfileScreen';
@@ -8,13 +8,34 @@ import ProfileScreen from '../screens/ProfileScreen/ProfileScreen';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {View, Text, Image} from 'react-native';
 import BottomTabNavigator from './BottomTabNavigator';
-import {RootNavigator} from './types';
+import {RootNavigatorParamList} from './types';
 
-const Stack = createNativeStackNavigator<RootNavigator>(); // Uses 2 properties { Navigator, Screen }
+const Stack = createNativeStackNavigator<RootNavigatorParamList>(); // Uses 2 properties { Navigator, Screen }
+
+const linking: LinkingOptions<RootNavigatorParamList> = {
+  prefixes: ['instaclone://', 'https://instaclone.com'], // Universal link
+  config: {
+    initialRouteName: 'Home',
+    screens: {
+      Comments: 'comments', // instaclone://comments
+      Home: {
+        screens: {
+          HomeStack: {
+            initialRouteName: 'Feed',
+            screens: {
+              UserProfile: 'user/:userId',
+            },
+          },
+        },
+      },
+      // instaclone://user/...
+    },
+  },
+};
 
 const Navigation = () => {
   return (
-    <NavigationContainer>
+    <NavigationContainer linking={linking}>
       <Stack.Navigator
         initialRouteName="Home"
         screenOptions={{headerShown: true}}>
