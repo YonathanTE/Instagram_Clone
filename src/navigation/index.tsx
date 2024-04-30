@@ -8,7 +8,7 @@ import ProfileScreen from '../screens/ProfileScreen/ProfileScreen';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {View, Text, Image} from 'react-native';
 import BottomTabNavigator from './BottomTabNavigator';
-import {RootNavigatorParamList} from './types';
+import {RootNavigatorParamList} from '../types/navigation';
 
 const Stack = createNativeStackNavigator<RootNavigatorParamList>(); // Uses 2 properties { Navigator, Screen }
 

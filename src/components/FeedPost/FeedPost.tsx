@@ -12,7 +12,7 @@ import Comment from '../Comment/Comment';
 import DoublePressable from '../DoublePressable';
 import Carousel from '../Carousel';
 import VideoPlayer from '../VideoPlayer';
-import {FeedNavigationProp} from '../../navigation/types';
+import {FeedNavigationProp} from '../../types/navigation';
 
 import styles from './styles';
 import {useNavigation} from '@react-navigation/native';

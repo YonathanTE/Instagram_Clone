@@ -3,8 +3,6 @@
 /* eslint-disable react/no-unstable-nested-components */
 
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import HomeScreen from '../screens/HomeScreen/HomeScreen';
-import ProfileScreen from '../screens/ProfileScreen/ProfileScreen';
 import PostUploadScreen from '../screens/PostUploadScreen';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
@@ -13,6 +11,7 @@ import {faUserCircle} from '@fortawesome/free-solid-svg-icons';
 import HomeStackNavigator from './HomeStackNavigator';
 import colors from '../theme/colors';
 import ProfileStackNavigator from './ProfileStackNavigator';
+import SearchTabNavigator from './SearchTabNavigator';
 
 const Tab = createBottomTabNavigator();
 
@@ -36,11 +35,12 @@ const BottomTabNavigator = () => {
       />
       <Tab.Screen
         name="Search"
-        component={HomeScreen}
+        component={SearchTabNavigator}
         options={{
           tabBarIcon: ({color, size}) => (
             <MaterialIcons name="search" size={size} color={color} />
           ),
+          headerShown: false,
         }}
       />
       <Tab.Screen
