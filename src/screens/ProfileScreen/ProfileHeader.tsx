@@ -7,6 +7,7 @@ import FeedPost from '../../components/FeedPost';
 import user from '../../assets/data/user.json';
 import Button from '../../components/Button';
 import {useNavigation} from '@react-navigation/native';
+import {Auth} from 'aws-amplify';
 import {ProfileNavigationProp} from '../../types/navigation';
 
 const ProfileHeader = () => {
@@ -43,7 +44,7 @@ const ProfileHeader = () => {
           text="Edit Profile"
           onPress={() => navigation.navigate('Edit Profile')}
         />
-        <Button text="Go back" onPress={() => navigation.goBack()} />
+        <Button text="Sign out" onPress={() => Auth.signOut()} />
       </View>
     </View>
   );
